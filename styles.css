@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap");
+
+:root {
+  /* colors */
+  --primary-darkMagenta: hsl(300, 43%, 22%);
+  --primary-softPink: hsl(333, 80%, 67%);
+  --neutral-darkGrayishMagenta: hsl(303, 10%, 53%);
+  --neutral-lightGrayishMagenta: hsl(300, 24%, 96%);
+
+  /* Responsive Font Sizes */
+  --step--2: clamp(0.91rem, calc(0.89rem + 0.1vw), 0.96rem);
+  --step--1: clamp(1.09rem, calc(1.05rem + 0.21vw), 1.2rem);
+  --step-0: clamp(1.31rem, calc(1.24rem + 0.37vw), 1.5rem);
+  --step-1: clamp(1.58rem, calc(1.46rem + 0.59vw), 1.88rem);
+  --step-2: clamp(1.89rem, calc(1.71rem + 0.89vw), 2.34rem);
+  --step-3: clamp(2.27rem, calc(2.01rem + 1.29vw), 2.93rem);
+  --step-4: clamp(2.72rem, calc(2.36rem + 1.83vw), 3.66rem);
+  --step-5: clamp(3.27rem, calc(2.75rem + 2.56vw), 4.58rem);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 15px;
+}
+
+body {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 400;
+  font-size: var(--step--1);
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  padding: 7rem;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+main .description {
+  width: 450px;
+}
+
+main .description h1 {
+  color: var(--primary-darkMagenta);
+  font-size: var(--step-4);
+  margin-bottom: 2rem;
+}
+
+main .description p {
+  color: var(--neutral-darkGrayishMagenta);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.ratings-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  width: clamp(200px, 100%, 100%);
+}
+
+.ratings-grid .rating {
+  width: 85%;
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+
+.ratings-grid .rating:nth-child(1) {
+  justify-self: start;
+}
+
+.ratings-grid .rating:nth-child(2) {
+  justify-self: center;
+}
+
+.ratings-grid .rating:nth-child(3) {
+  justify-self: end;
+}
+
+.ratings-grid .rating .stars {
+  display: flex;
+  flex-direction: row;
+  gap: 0.6rem;
+}
+
+.ratings-grid .rating p {
+  color: var(--primary-darkMagenta);
+  font-weight: 700;
+}
+
+.reviews-grid {
+  grid-column: span 2;
+  grid-template-rows: clamp(200px, 325px, 325px);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  margin-top: 5rem;
+}
+
+.reviews-grid .review {
+  background-color: var(--primary-darkMagenta);
+  border-radius: 1rem;
+  overflow: hidden;
+  color: white;
+  padding: 3rem 2.5rem;
+  height: 80%;
+}
+
+.reviews-grid .review:nth-child(1) {
+  align-self: start;
+}
+
+.reviews-grid .review:nth-child(2) {
+  align-self: center;
+}
+.reviews-grid .review:nth-child(3) {
+  align-self: end;
+}
+
+.reviews-grid .review .header {
+  margin-bottom: 1rem;
+}
+
+.reviews-grid .review .header img {
+  float: left;
+  margin-right: 1.5rem;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.reviews-grid .review .header .name {
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.reviews-grid .review .header .verified {
+  color: var(--primary-softPink);
+}
+
+.reviews-grid .review > p {
+  line-height: 1.5;
+}
+
+.attribution {
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  width: 100%;
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 1160px) {
+  body {
+    padding: 3rem 1rem;
+  }
+  main {
+    display: block;
+    width: 100%;
+  }
+
+  main .description {
+    text-align: center;
+    width: clamp(325px, 500px, 100%);
+    margin: 0 auto;
+  }
+
+  main .description h1 {
+    font-size: var(--step-3);
+    width: clamp(200px, 700px, 70%);
+    margin: 0 auto;
+    margin-bottom: 1rem;
+  }
+
+  .ratings-grid {
+    padding: 2rem 0;
+    gap: 2rem;
+  }
+
+  .ratings-grid .rating:nth-child(1) {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 70%;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  .ratings-grid .rating:nth-child(2) {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 70%;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  .ratings-grid .rating:nth-child(3) {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 70%;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  .reviews-grid {
+    grid-column: span 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 1rem;
+    width: clamp(350px, 500px, 90%);
+    margin: 0 auto;
+  }
+
+  .reviews-grid .review {
+    height: unset;
+    align-self: stretch;
+  }
+}
